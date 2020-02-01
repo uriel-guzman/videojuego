@@ -182,3 +182,65 @@ function EraserPiece() {
 
 EraserPiece.prototype = Object.create(Piece.prototype);
 EraserPiece.prototype.constructor = Piece;
+
+function LPiece() {
+  Piece.call(this)
+
+  this.rotations = [
+    [[1,0,0,0],
+     [1,1,1,0],
+     [0,0,0,0],
+     [0,0,0,0]],
+
+    [[0,1,1,0],
+     [0,1,0,0],
+     [0,1,0,0],
+     [0,0,0,0]],
+
+    [[0,0,0,0],
+     [1,1,1,0],
+     [0,0,1,0],
+     [0,0,0,0]],
+
+    [[0,1,0,0],
+     [0,1,0,0],
+     [1,1,0,0],
+     [0,0,0,0]],
+  ];
+
+  this.shape = this.rotations[0];
+}
+
+LPiece.prototype = Object.create(Piece.prototype);
+LPiece.prototype.constructor = Piece;
+
+function JPiece() {
+  Piece.call(this)
+
+  this.rotations = [
+    [[0,0,1,0],
+     [1,1,1,0],
+     [0,0,0,0],
+     [0,0,0,0]],
+
+    [[0,1,0,0],
+     [0,1,0,0],
+     [0,1,1,0],
+     [0,0,0,0]],
+
+    [[0,0,0,0],
+     [1,1,1,0],
+     [1,0,0,0],
+     [0,0,0,0]],
+
+    [[1,1,0,0],
+     [0,1,0,0],
+     [0,1,0,0],
+     [0,0,0,0]],
+  ];
+
+  this.shape = this.rotations[0];
+}
+
+JPiece.prototype = Object.create(Piece.prototype);
+JPiece.prototype.constructor = Piece;

@@ -1,6 +1,7 @@
-function Game() {
+function Game2() {
   this.frameCounter = 0;
   this.framesTick = 40;
+  this.players = 2;
   this.pieceQueueLength = 3;
   this.board = undefined;
   this.fallingPiece = undefined;
@@ -20,7 +21,7 @@ function Game() {
   this.init();
 }
 
-Game.prototype.init = function() {
+Game2.prototype.init = function() {
   this.board = new Board();
   this.fallingPiece = undefined;
   this.retainedPiece = undefined;
@@ -34,7 +35,7 @@ Game.prototype.init = function() {
   }
 }
 
-Game.prototype.start = function() {
+Game2.prototype.start = function() {
   this.createNewPiece();
 
   if (!this.intervalId) {
@@ -62,18 +63,18 @@ Game.prototype.start = function() {
   }
 }
 
-Game.prototype.stop =  function() {
+Game2.prototype.stop =  function() {
   clearInterval(this.intervalId);
   this.intervalId = undefined;
 }
 
-Game.prototype.restart = function() {
+Game2.prototype.restart = function() {
   this.stop();
   this.init();
   this.start();
 }
 
-Game.prototype.tickUpdate = function () {
+Game2.prototype.tickUpdate = function () {
   this.frameCounter++;
 
   if (this.frameCounter >= this.levels[this.currentLevel].tick) {
@@ -100,7 +101,7 @@ Game.prototype.tickUpdate = function () {
   }
 }
 
-Game.prototype.clearLines = function() {
+Game2.prototype.clearLines = function() {
   var lines = this.board.checkLines();
   if (lines.length > 0) {
     this.linesCleared += lines.length;
@@ -109,7 +110,7 @@ Game.prototype.clearLines = function() {
   }
 };
 
-Game.prototype.checkLevel = function() {
+Game2.prototype.checkLevel = function() {
   if (this.linesCleared >= this.levels[this.currentLevel].lvlUpLines) {
     if (this.currentLevel < this.levels.length - 1) {
       this.currentLevel++;
@@ -118,25 +119,25 @@ Game.prototype.checkLevel = function() {
   }
 }
 
-Game.prototype.checkLost = function() {
+Game2.prototype.checkLost = function() {
   if (this.board.checkLost()) {
     this.lose();
   }
 }
 
-Game.prototype.lose = function () {
+Game2.prototype.lose = function () {
   alert("Perdiste");
   this.restart();
 }
 
-Game.prototype.createNewPiece = function() {
+Game2.prototype.createNewPiece = function() {
   this.fallingPiece = this.nextPieces.shift();
   if (this.nextPieces.length < this.pieceQueueLength) {
     this.nextPieces.push(PieceFactory.getNewPiece());
   }
 };
 
-Game.prototype.checkCondition = function(direction) {
+Game2.prototype.checkCondition = function(direction) {
   var movedPiece = this.fallingPiece.getPossiblePieceState(direction)
   if (movedPiece.isEraser) {
     return this.board.isInside(movedPiece);
@@ -145,25 +146,25 @@ Game.prototype.checkCondition = function(direction) {
   }
 }
 
-Game.prototype.movePieceDown = function() {
+Game2.prototype.movePieceDown = function() {
   if (this.checkCondition("down")) {
     this.fallingPiece.down();
   }
 };
 
-Game.prototype.movePiece = function(right) {
+Game2.prototype.movePiece = function(right) {
   if (this.checkCondition(right ? "right": "left")) {
     this.fallingPiece.move(right);
   }
 };
 
-Game.prototype.rotatePiece = function() {
+Game2.prototype.rotatePiece = function() {
   if (this.checkCondition("rotation")) {
     this.fallingPiece.rotate();
   }
 }
 
-Game.prototype.dropPiece = function() {
+Game2.prototype.dropPiece = function() {
   this.checkLost();
 
   if (this.fallingPiece.isEraser) {
@@ -184,7 +185,7 @@ Game.prototype.dropPiece = function() {
   this.createNewPiece();
 }
 
-Game.prototype.setEraser = function() {
+Game2.prototype.setEraser = function() {
   if (this.erasers > 0) {
     this.erasers--;
     var eraser = new EraserPiece();
@@ -192,7 +193,7 @@ Game.prototype.setEraser = function() {
   }
 }
 
-Game.prototype.onkeydown = function(key) {
+Game2.prototype.onkeydown = function(key) {
   switch(key) {
     case TOP:
       this.rotatePiece();

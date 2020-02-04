@@ -4,3 +4,5 @@ var LEFT = 37;
 var RIGHT = 39;
 var SPACE = 32;
 var SHIFT = 16;
+var A = 65;
+var B = 66;

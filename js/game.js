@@ -9,7 +9,7 @@ function Game() {
   this.intervalId = undefined;
   this.linesCleared = 0;
   this.levels = [
-    { tick: 20, lvlUpLines: 2 },
+    { tick: 20, lvlUpLines: 5 },
     { tick: 15, lvlUpLines: 10 },
     { tick: 15, lvlUpLines: 20 },
     { tick: 10, lvlUpLines: 40 },

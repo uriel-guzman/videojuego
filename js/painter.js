@@ -17,14 +17,14 @@ var Painter = function () {
   }
 
    var colors = {
-     background: "#9AAFCC",
-     cells: "#E6EBF1",
-     fullCells: "#8a92a5",
-     ghost: "#000408",
-     pieces: "#476FAA",
-     eraser: "#ffffff",
-     text: "#004168",
-   }
+    background: "#661039",
+    cells: "#974e7a",
+    fullCells: "#BD1550",
+    ghost: "#4d1c39",
+    pieces: "#e29f39",
+    eraser: "#ffffff",
+    text: "#ECD078"
+  }
 
   function centerBoard() {
     var boardWidth = (cellSize + cellSeparation) * 12;

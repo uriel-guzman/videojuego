@@ -244,3 +244,98 @@ function JPiece() {
 
 JPiece.prototype = Object.create(Piece.prototype);
 JPiece.prototype.constructor = Piece;
+
+function SPiece() {
+  Piece.call(this)
+
+  this.rotations = [
+    [[0,1,1,0],
+     [1,1,0,0],
+     [0,0,0,0],
+     [0,0,0,0]],
+
+    [[0,1,0,0],
+     [0,1,1,0],
+     [0,0,1,0],
+     [0,0,0,0]],
+
+    [[0,1,1,0],
+     [1,1,0,0],
+     [0,0,0,0],
+     [0,0,0,0]],
+
+    [[0,1,0,0],
+     [0,1,1,0],
+     [0,0,1,0],
+     [0,0,0,0]],
+  ];
+
+  this.shape = this.rotations[0];
+}
+
+SPiece.prototype = Object.create(Piece.prototype);
+SPiece.prototype.constructor = Piece;
+
+function ZPiece() {
+  Piece.call(this)
+
+  this.rotations = [
+    [[1,1,0,0],
+     [0,1,1,0],
+     [0,0,0,0],
+     [0,0,0,0]],
+
+    [[0,0,1,0],
+     [0,1,1,0],
+     [0,1,0,0],
+     [0,0,0,0]],
+
+    [[1,1,0,0],
+     [0,1,1,0],
+     [0,0,0,0],
+     [0,0,0,0]],
+
+    [[0,0,1,0],
+     [0,1,1,0],
+     [0,1,0,0],
+     [0,0,0,0]],
+  ];
+
+  this.shape = this.rotations[0];
+}
+
+ZPiece.prototype = Object.create(Piece.prototype);
+ZPiece.prototype.constructor = Piece;
+
+
+function EraserPiece() {
+  Piece.call(this)
+
+  this.rotations = [
+    [[1,1,1,0],
+     [1,1,1,0],
+     [0,0,0,0],
+     [0,0,0,0]],
+
+    [[0,1,1,0],
+     [0,1,1,0],
+     [0,1,1,0],
+     [0,0,0,0]],
+
+    [[0,0,0,0],
+     [1,1,1,0],
+     [1,1,1,0],
+     [0,0,0,0]],
+
+    [[1,1,0,0],
+     [1,1,0,0],
+     [1,1,0,0],
+     [0,0,0,0]],
+  ];
+
+  this.shape = this.rotations[0];
+  this.isEraser = true;
+}
+
+EraserPiece.prototype = Object.create(Piece.prototype);
+EraserPiece.prototype.constructor = Piece;

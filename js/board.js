@@ -52,6 +52,21 @@ Board.prototype.isInside = function(piece) {
   return true;
 };
 
+Board.prototype.addLevels = function(levels) {
+  for (var row = 0; row < this.boardMatrix.length - 1; row++) {
+    for (var col = 1; col < this.boardMatrix[0].length - 1; col++) {
+      this.boardMatrix[Math.max(row - levels, 0)][col] = this.boardMatrix[row][col];
+    }
+  }
+  for (var row = this.boardMatrix.length - 2; row >= this.boardMatrix.length - 1 - levels; row--) {
+    for (var col = 1; col < this.boardMatrix[0].length - 1; col++) {
+      this.boardMatrix[row][col] = 1;
+    }
+    var free = Math.floor(Math.random() * 10);
+    this.boardMatrix[row][free + 1] = 0;
+  }
+}
+
 Board.prototype.checkCollision = function(piece) {
   for (var row = 0; row < piece.shape.length; row++) {
     for (var col = 0; col < piece.shape[0].length; col++) {

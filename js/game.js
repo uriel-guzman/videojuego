@@ -17,6 +17,7 @@ function Game() {
   ];
   this.currentLevel = 0;
   this.erasers = 1;
+  this.players = 1;
   this.init();
 }
 
@@ -28,7 +29,7 @@ Game.prototype.init = function() {
   this.linesCleared = 0;
   this.currentLevel = 0;
   this.erasers = 1;
-
+  this.players = 1;
   for (var i = 0; i < this.pieceQueueLength; i++) {
     this.nextPieces.push(PieceFactory.getNewPiece());
   }
@@ -192,6 +193,17 @@ Game.prototype.setEraser = function() {
   }
 }
 
+Game.prototype.passToPlayer = function(right) {
+  if (this.players == 2) {
+
+
+
+  } else if (this.players == 3) {
+
+  }
+  // this.board.addLevels(3); añade 3 nivel abajo
+}
+
 Game.prototype.onkeydown = function(key) {
   switch(key) {
     case TOP:
@@ -211,6 +223,12 @@ Game.prototype.onkeydown = function(key) {
       break;
     case SHIFT:
       this.setEraser();
+      break;
+    case PLAYER2:
+      this.passToPlayer(true);
+      break;
+    case PLAYER3:
+      this.passToPlayer(false);
       break;
   }
 }

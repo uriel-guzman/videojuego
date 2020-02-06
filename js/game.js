@@ -8,6 +8,7 @@ function Game() {
   this.nextPieces = [];
   this.intervalId = undefined;
   this.linesCleared = 0;
+  this.linesToSend = 0;
   this.levels = [
     { tick: 20, lvlUpLines: 5 },
     { tick: 15, lvlUpLines: 10 },
@@ -30,6 +31,7 @@ Game.prototype.init = function() {
   this.currentLevel = 0;
   this.erasers = 1;
   this.players = 1;
+  this.linesToSend = 0;
   for (var i = 0; i < this.pieceQueueLength; i++) {
     this.nextPieces.push(PieceFactory.getNewPiece());
   }
@@ -95,7 +97,6 @@ Game.prototype.tickUpdate = function () {
       }
       this.createNewPiece();
     }
-
     // Check lines and clear them
     this.clearLines();
   }
@@ -108,6 +109,7 @@ Game.prototype.clearLines = function() {
     this.board.clearLines(lines);
     this.checkLevel()
   }
+  this.linesToSend = lines.length;
 };
 
 Game.prototype.checkLevel = function() {
@@ -195,13 +197,17 @@ Game.prototype.setEraser = function() {
 
 Game.prototype.passToPlayer = function(right) {
   if (this.players == 2) {
-
-
-
+    // It doesn't matter who is the second player
+    // this.leftBoard.addLevels(linesToSend);
   } else if (this.players == 3) {
-
+    if (right) {
+      // Send to right board
+      // this.leftBoard.addLevels(linesToSend);
+    } else {
+      // Send to left board
+      // this.rightBoard.addLevels(linesToSend);
+    }
   }
-  // this.board.addLevels(3); añade 3 nivel abajo
 }
 
 Game.prototype.onkeydown = function(key) {

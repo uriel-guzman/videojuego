@@ -107,6 +107,30 @@
 		gtag('config', 'UA-23581568-13');
 	</script>
 
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+	     https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyDUiM_7aX_n9kN6wCTnjq7M9uIbLKJDlGU",
+			authDomain: "videojuego-1c8d8.firebaseapp.com",
+			databaseURL: "https://videojuego-1c8d8.firebaseio.com",
+			projectId: "videojuego-1c8d8",
+			storageBucket: "videojuego-1c8d8.appspot.com",
+			messagingSenderId: "462269436821",
+			appId: "1:462269436821:web:98e6ebcbd026b3f128dc9c",
+			measurementId: "G-4N63VYDNCC"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+	</script>
+
 </body>
 
 </html>

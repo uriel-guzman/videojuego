@@ -103,45 +103,19 @@
 
 
 	<div id="dropDownSelect1"></div>
-
-	<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-	<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'UA-23581568-13');
-	</script>
-
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
-
-	<!-- TODO: Add SDKs for Firebase products that you want to use
-	     https://firebase.google.com/docs/web/setup#available-libraries -->
-	<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
-
-
-
 </body>
-<script> src = "/__/firebase/7.8.0/firebase-auth.js"</script>>
+
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="/__/firebase/7.8.0/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="/__/firebase/7.8.0/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="/__/firebase/7.8.0/firebase-auth.js"></script>
+<script src="/__/firebase/7.8.0/firebase-firestore.js"></script>
 
 <script>
 	// Your web app's Firebase configuration

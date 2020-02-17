@@ -1,0 +1,15 @@
+{
+  "hosting": {
+    "site": "tetris314",
+    "public": "public",
+    "rewrites": [
+      {
+        "source": "/a",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "database": {
+    "rules": "database.rules.json"
+  }
+}

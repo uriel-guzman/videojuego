@@ -15,9 +15,6 @@ function onloader1() {
       var data = xhr.responseText;
       var jsonResponse = JSON.parse(data);
       console.log(jsonResponse["email"]);
-      document.getElementById(
-        "email"
-      ).innerHTML = `Bienvenido ${jsonResponse["email"]}`;
     } else {
       window.location.href = "/";
     }
@@ -41,9 +38,6 @@ window.onload = function() {
       var data = xhr.responseText;
       var jsonResponse = JSON.parse(data);
       console.log(jsonResponse["email"]);
-      document.getElementById(
-        "email"
-      ).innerHTML = `Bienvenido ${jsonResponse["email"]}`;
     } else {
       return (window.location.href = "/");
     }

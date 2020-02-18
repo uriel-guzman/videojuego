@@ -4,8 +4,8 @@
     "public": "public",
     "rewrites": [
       {
-        "source": "/a",
-        "destination": "/index.html"
+        "source": "/api",
+        "function": "api"
       }
     ]
   },

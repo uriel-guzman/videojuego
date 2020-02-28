@@ -12,153 +12,118 @@
   limitations under the License
 -->
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Authenticated JSON API</title>
 
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/bootstrap/css/bootstrap.min.css"
-    />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
-    />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/css-hamburgers/hamburgers.min.css"
-    />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/animsition/css/animsition.min.css"
-    />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/select2/select2.min.css"
-    />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/daterangepicker/daterangepicker.css"
-    />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/util.css" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <!--===============================================================================================-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Authenticated JSON API</title>
 
-    <!-- Material Design Lite -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link
-      rel="stylesheet"
-      href="https://code.getmdl.io/1.1.3/material.light_blue-pink.min.css"
-    />
+  <!--===============================================================================================-->
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="css/util.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <!--===============================================================================================-->
 
-    <link rel="stylesheet" href="./main.css" />
-  </head>
-  <body background="Fondo tetris.jpg" onload="onloader()">
-    <ul>
-      <li><a class="active" href="index.html">Inicio</a></li>
-      <li><a href="game.html">Juego</a></li>
-      <li><a href="#tienda">Tienda</a></li>
-      <li><a href="#repeticiones">Repeticiones</a></li>
-    </ul>
+  <!-- Material Design Lite -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.light_blue-pink.min.css" />
 
-    <div class="container-contact100">
-      <div class="wrap-contact100">
-        <span class="contact100-form-title">
-          &nbsp;&nbsp;&nbsp;Tetris 2
-        </span>
+  <link rel="stylesheet" href="./main.css" />
+</head>
 
-        <div>
-          <h3 id="email">Bienvenido</h3>
+<body background="Fondo tetris.jpg" onload="onloader()">
+  <ul>
+    <li><a class="active" href="index.html">Inicio</a></li>
+    <li><a href="game.html">Juego</a></li>
+    <li><a href="#tienda">Tienda</a></li>
+    <li><a href="#repeticiones">Repeticiones</a></li>
+  </ul>
+
+  <div class="container-contact100">
+    <div class="wrap-contact100">
+      <span class="contact100-form-title">
+        &nbsp;&nbsp;&nbsp;Tetris 2
+      </span>
+
+      <div>
+        <h3 id="email">Bienvenido</h3>
+      </div>
+      <div class="container-contact100-form-btn">
+        <div class="imageFB">
+          <picture>
+            <img src="fb.png" width="55" height="55" alt="Facebook" />
+          </picture>
         </div>
-        <div class="container-contact100-form-btn">
-          <div class="imageFB">
-            <picture>
-              <img src="fb.png" width="55" height="55" alt="Facebook" />
-            </picture>
-          </div>
-          <button class="contact100-form-btn" onclick="signin()">
-            <span
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Iniciar con Facebook
-            </span>
-          </button>
-        </div>
+        <button class="contact100-form-btn" onclick="signin()">
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Iniciar con Facebook
+          </span>
+        </button>
+      </div>
 
-        <div class=" container-contact100-form-Google">
-          <img src="gmail.png" width="55" height="55" alt="Gmail" />
-          <button
-            id="demo-sign-in-button"
-            onclick="signInGoogle()"
-            class="contact100-form-Google"
-          >
-            <span>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Iniciar con gmail
-              <picture> </picture>
-            </span>
-          </button>
-        </div>
-        <div class="container-contact100-form-Git">
-          <img src="github.png" width="55" height="55" alt="Github" />
-          <button class="contact100-form-Git">
-            <span>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Iniciar con GitHub&nbsp;
-            </span>
-          </button>
-        </div>
-        <div class="cuenta">
-          <p>&nbsp;&nbsp;&nbsp;</p>
-        </div>
+      <div class=" container-contact100-form-Google">
+        <img src="gmail.png" width="55" height="55" alt="Gmail" />
+        <button id="demo-sign-in-button" onclick="signInGoogle()" class="contact100-form-Google">
+          <span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Iniciar con gmail
+            <picture> </picture>
+          </span>
+        </button>
+      </div>
+      <div class="container-contact100-form-Git">
+        <img src="github.png" width="55" height="55" alt="Github" />
+        <button class="contact100-form-Git">
+          <span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Iniciar con GitHub&nbsp;
+          </span>
+        </button>
+      </div>
+      <div class="cuenta">
+        <p>&nbsp;&nbsp;&nbsp;</p>
       </div>
     </div>
+  </div>
 
-    <div id="dropDownSelect1"></div>
+  <div id="dropDownSelect1"></div>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDUiM_7aX_n9kN6wCTnjq7M9uIbLKJDlGU",
+      authDomain: "videojuego-1c8d8.firebaseapp.com",
+      databaseURL: "https://videojuego-1c8d8.firebaseio.com",
+      projectId: "videojuego-1c8d8",
+      storageBucket: "videojuego-1c8d8.appspot.com",
+      messagingSenderId: "462269436821",
+      appId: "1:462269436821:web:98e6ebcbd026b3f128dc9c",
+      measurementId: "G-4N63VYDNCC"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="index.js"></script>
+</body>
 
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyAhNo4cnAPWe4rtTX0hzMIAbJzcwoY5GBw",
-        authDomain: "tetris-a3d33.firebaseapp.com",
-        databaseURL: "https://tetris-a3d33.firebaseio.com",
-        projectId: "tetris-a3d33",
-        storageBucket: "tetris-a3d33.appspot.com",
-        messagingSenderId: "848556069574",
-        appId: "1:848556069574:web:a27046f29a93df53627dc7"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
-    <script src="index.js"></script>
-  </body>
 </html>
